@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /* 解决canvas100%却有滚动条方法3 第一个父元素的 font-size -> 0 */
+    /* font-size: 0; */
+}
+
+#sakura {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    /* 解决canvas100%却有滚动条方法1 inline -> block*/
+    display: block;
+    /* 解决canvas100%却有滚动条方法2 baseline -> top*/
+    /* vertical-align: top; */
+}
+
+.btnbg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(./images/92462879_p0.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    mask-image: linear-gradient(100deg, transparent 0%, rgb(0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(
+        100deg,
+        transparent 0%,
+        rgb(0, 0, 0) 100%
+    );
+}

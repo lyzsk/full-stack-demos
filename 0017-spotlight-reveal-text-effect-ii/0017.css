@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-notosans: "Noto Sans", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --radius-f-circle: 5.375rem;
+    --radius-s-circle: 1.875rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.img-box {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(./images/92246930_p0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0%;
+}
+/* 装h1的text-box设置绝对定位, 文字居中对齐 */
+.text-box {
+    position: absolute;
+    top: 25%;
+    left: 2%;
+    text-align: center;
+}
+
+.text-box h1 {
+    font-family: var(--font-notosans);
+    color: transparent;
+    /* font-size: 1.875rem; */
+    font-size: 2.125rem;
+    font-weight: 900;
+    letter-spacing: 0.125rem;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+    background-image: radial-gradient(
+        closest-side,
+        rgb(196, 33, 28),
+        rgb(215, 92, 94) 100%,
+        transparent 0
+    );
+    background-size: 6.375rem 6.375rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    -moz-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    -ms-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    -o-transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+}

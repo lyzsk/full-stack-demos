@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-nav-bg: rgb(19, 19, 19);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+header nav {
+    width: 100vw;
+    height: 3.125rem;
+    background-color: var(--c-nav-bg);
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transition: height 0.8s, color 0.5s, background-color 0.5s;
+    -moz-transition: height 0.8s, color 0.5s, background-color 0.5s;
+    -ms-transition: height 0.8s, color 0.5s, background-color 0.5s;
+    -o-transition: height 0.8s, color 0.5s, background-color 0.5s;
+    transition: height 0.8s, color 0.5s, background-color 0.5s;
+}
+
+header nav .nav-title {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 0.125rem;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container img {
+    position: relative;
+    width: min(100%, 1024px);
+    height: auto;
+}
+
+nav.sticky {
+    background-color: rgba(19, 19, 19, 0.8);
+    height: calc(3.125rem * 0.75);
+}
+
+nav.sticky .nav-title {
+    color: rgba(255, 255, 255, 0.9);
+}

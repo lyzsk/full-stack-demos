@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-sc: "Noto Sans SC", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(./images/100016038_p0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.typewriter-wraper {
+    width: 100vw;
+    height: 10vh;
+    min-width: 8.25rem;
+    min-height: 1.5rem;
+    background-color: rgba(19, 19, 19, 0.75);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.typewriter {
+    position: relative;
+}
+
+.typewriter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0.125rem;
+    height: 100%;
+    background-color: rgb(254, 153, 145);
+    -webkit-animation: blink 1.1s steps(3) infinite;
+    -moz-animation: blink 1.1s steps(3) infinite;
+    -ms-animation: blink 1.1s steps(3) infinite;
+    -o-animation: blink 1.1s steps(3) infinite;
+    animation: blink 1.1s steps(2) infinite;
+}
+
+/* h1里的内容一定要是同一字体的 */
+/* 否则算steps的时候有BUG, 无法一step一字 */
+.typewriter h1 {
+    position: relative;
+    color: rgb(254, 153, 145);
+    font-family: var(--font-sc);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.125rem;
+    /* 设置nowrap, hidden, 实现逐字打印*/
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-animation: typing 3.5s steps(8) infinite;
+    -moz-animation: typing 3.5s steps(8) infinite;
+    -ms-animation: typing 3.5s steps(8) infinite;
+    -o-animation: typing 3.5s steps(8) infinite;
+    animation: typing 3.5s steps(8) infinite;
+}
+
+@keyframes blink {
+    0%,
+    50% {
+        opacity: 1;
+    }
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    40% {
+        /* h1的width */
+        width: 176px;
+    }
+}

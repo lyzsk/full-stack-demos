@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.img-box {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-box:nth-child(1) {
+    background-image: url(./images/100497709_p1.jpg);
+    left: 0;
+}
+
+.img-box:nth-child(2) {
+    background-image: url(./images/100497709_p0.jpg);
+    left: 50%;
+}
+
+.loading-box {
+    width: 10rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-75%, -50%);
+    -moz-transform: translate(-75%, -50%);
+    -ms-transform: translate(-75%, -50%);
+    -o-transform: translate(-75%, -50%);
+    transform: translate(-75%, -50%);
+}
+
+.loading-box div {
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    background-color: rgb(255, 158, 151);
+    /* 计算left偏移 */
+    left: calc(var(--i) * 2rem);
+    /* 设置字体 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-en);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgb(239, 53, 56);
+    text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.2);
+    -webkit-animation: animate 2.5s linear infinite;
+    -moz-animation: animate 2.5s linear infinite;
+    -ms-animation: animate 2.5s linear infinite;
+    -o-animation: animate 2.5s linear infinite;
+    animation: animate 2.5s linear infinite;
+    -webkit-animation-delay: calc(var(--i) * 400ms);
+    -moz-animation-delay: calc(var(--i) * 400ms);
+    -ms-animation-delay: calc(var(--i) * 400ms);
+    -o-animation-delay: calc(var(--i) * 400ms);
+    animation-delay: calc(var(--i) * 400ms);
+}
+
+@keyframes animate {
+    0% {
+        /* 10个方块，2rem，10*2=20rem */
+        left: 20rem;
+        top: 0;
+    }
+    70% {
+        left: 0;
+        top: 0;
+    }
+    75% {
+        left: 0;
+        top: -2rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    78% {
+        left: 0;
+        top: -2rem;
+    }
+    90% {
+        width: 5rem;
+        height: 1.875rem;
+    }
+    95% {
+        left: 20rem;
+        top: -2rem;
+        width: 2rem;
+        height: 2rem;
+    }
+    98% {
+        left: 20rem;
+        top: -2rem;
+    }
+    100% {
+        left: 20rem;
+        top: 0;
+    }
+}

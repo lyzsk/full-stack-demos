@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-jp: "Noto Sans Japanese", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-grid {
+    position: relative;
+    display: grid;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 2.5rem;
+    /* 最大宽度1200px */
+    max-width: 75rem;
+    width: 100%;
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    filter: brightness(0.75) saturate(1.2) contrast(0.85);
+    -webkit-transition: filter 200ms linear, transform 200ms linear;
+    -moz-transition: filter 200ms linear, transform 200ms linear;
+    -ms-transition: filter 200ms linear, transform 200ms linear;
+    -o-transition: filter 200ms linear, transform 200ms linear;
+    transition: filter 200ms linear, transform 200ms linear;
+}
+.background.first-background {
+    background-image: url(./images/91163810_p2.png);
+}
+.background.second-background {
+    background-image: url(./images/91163810_p3.png);
+}
+.background.third-background {
+    background-image: url(./images/91163810_p0.png);
+}
+.background.fourth-background {
+    background-image: url(./images/91163810_p5.png);
+}
+
+.card {
+    position: relative;
+}
+
+.card::before {
+    content: "";
+    display: block;
+    /* 拉长card */
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.content {
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+}
+
+.category {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-en);
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.75);
+}
+
+.heading {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-jp);
+    font-size: 2rem;
+    text-shadow: 0.125rem 0.125rem 0.125rem rgba(0, 0, 0, 0.75);
+}
+
+.card:hover .background {
+    transform: scale(1.05);
+    filter: none;
+}
+
+.card:hover .heading {
+    color: rgb(255, 30, 30);
+    text-shadow: 0.125rem 0.125rem 0.125rem rgba(222, 94, 114, 0.75),
+        0.125rem 0.125rem 0.25rem rgba(222, 94, 114, 0.75);
+}
+
+@media (min-width: 540px) {
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1080px) {
+    .card-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.card-grid:hover > .card:not(:hover) .background {
+    filter: brightness(0.6) saturate(1) contrast(0.8) blur(2px);
+}

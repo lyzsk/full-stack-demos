@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.img-box {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-box:nth-child(1) {
+    background-image: url(./images/100103517_p0.jpg);
+    left: 0;
+    background-position: 95% 0%;
+}
+.img-box:nth-child(2) {
+    background-image: url(./images/100116344_p0.jpg);
+    left: 50%;
+}
+
+.text-box {
+    /* 通过设置absolute达到div重叠的效果 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-family: var(--font-en);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.005rem;
+    text-shadow: 0.125rem 0.125rem 0.25rem rgb(0, 0, 0);
+}
+
+.text-box span {
+    display: inline-block;
+    position: relative;
+    /* 镜像反射 */
+    -webkit-box-reflect: below 0rem -webkit-linear-gradient(bottom, rgba(
+                    255,
+                    255,
+                    255,
+                    0.2
+                )
+                0%, transparent 65%, transparent 100%);
+    /* 开始动画 */
+    -webkit-animation: wavyAnimate 1.125s ease-in-out infinite;
+    -moz-animation: wavyAnimate 1.125s ease-in-out infinite;
+    -ms-animation: wavyAnimate 1.125s ease-in-out infinite;
+    -o-animation: wavyAnimate 1.125s ease-in-out infinite;
+    animation: wavyAnimate 1.125s ease-in-out infinite;
+    -webkit-animation-delay: calc(0.1s * var(--i));
+    -moz-animation-delay: calc(0.1s * var(--i));
+    -ms-animation-delay: calc(0.1s * var(--i));
+    -o-animation-delay: calc(0.1s * var(--i));
+    animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes wavyAnimate {
+    0% {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+    20% {
+        -webkit-transform: translateY(-0.75rem);
+        -moz-transform: translateY(-0.75rem);
+        -ms-transform: translateY(-0.75rem);
+        -o-transform: translateY(-0.75rem);
+        transform: translateY(-0.75rem);
+    }
+    40%,
+    100% {
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

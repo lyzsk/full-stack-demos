@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+#wrap-texture {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* 根据 https://github.com/martinlaxenaire/curtainsjs 设置canvas, plane, plane img */
+#canvas {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.plane {
+    /* 限制 plane 的大小 */
+    width: 100vw;
+    height: 100vh;
+}
+
+.plane img {
+    /* 隐藏 img 对象 */
+    display: none;
+}

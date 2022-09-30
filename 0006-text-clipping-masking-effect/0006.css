@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-jp: "Noto Sans Japanese", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-chisato: rgb(222, 94, 114);
+    --c-takina: rgb(88, 219, 216);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/99925222_p0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+}
+
+.text-bar {
+    width: 100vw;
+    height: 4.125rem;
+    background-color: rgba(19, 19, 19, 0.85);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.f-line {
+    font-family: var(--font-jp);
+    font-size: 1.875rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--c-takina),
+        var(--c-chisato),
+        transparent
+    );
+    /* 裁剪文字以外区域 */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-animation: f-animate 2.15s linear infinite;
+    -moz-animation: f-animate 2.15s linear infinite;
+    -ms-animation: f-animate 2.15s linear infinite;
+    -o-animation: f-animate 2.15s linear infinite;
+    animation: f-animate 2.15s linear infinite;
+}
+
+.s-line {
+    margin-top: -0.75rem;
+    font-family: var(--font-en);
+    font-size: 1.125rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    background: linear-gradient(
+        to right,
+        transparent,
+        var(--c-chisato),
+        var(--c-takina),
+        transparent
+    );
+    /* 裁剪文字以外区域 */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-animation: s-animate 2.3s linear infinite;
+    -moz-animation: s-animate 2.3s linear infinite;
+    -ms-animation: s-animate 2.3s linear infinite;
+    -o-animation: s-animate 2.3s linear infinite;
+    animation: s-animate 2.3s linear infinite;
+}
+
+@keyframes f-animate {
+    0% {
+        background-position: -400%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+@keyframes s-animate {
+    0% {
+        background-position: 400%;
+    }
+    100% {
+        background-position: -400%;
+    }
+}

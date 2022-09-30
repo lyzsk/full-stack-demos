@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-jp: "Noto Sans Japanese", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-chisato-1: rgb(239, 53, 54);
+    --c-takina-1: rgb(0, 180, 169);
+    --c-chisato-2: rgb(213, 70, 90);
+    --c-takina-2: rgb(0, 179, 168);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 配置所有content-box通用属性 */
+.content-box {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 分别配置f-content, s-content的背景图 */
+.f-content {
+    background-image: url(./images/100120022_p0.jpg);
+}
+.s-content {
+    background-image: url(./images/100120022_p1.jpg);
+}
+
+/* 配置所有content-box里的text-content的通用属性 */
+.content-box .text-content {
+    width: 50%;
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translateX(50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 配置所有content-box里的text-content里的text-box通用属性 */
+.content-box .text-content .text-box {
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    line-height: 2.375rem;
+}
+
+/* 配置所有content-box里的text-content里的 f-line 和 s-line 属性 */
+.content-box .text-content .f-line {
+    font-family: var(--font-jp);
+    font-size: 2.375rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+}
+.content-box .text-content .s-line {
+    font-family: var(--font-en);
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0.375rem;
+}
+
+/* 第一行span交错 */
+.content-box .text-content .f-line span:nth-child(odd) {
+    bottom: 7%;
+    -webkit-transform: translateY(-7%);
+    -moz-transform: translateY(-7%);
+    -ms-transform: translateY(-7%);
+    -o-transform: translateY(-7%);
+    transform: translateY(-7%);
+}
+.content-box .text-content .f-line span:nth-child(even) {
+    top: 7%;
+    -webkit-transform: translateY(7%);
+    -moz-transform: translateY(7%);
+    -ms-transform: translateY(7%);
+    -o-transform: translateY(7%);
+    transform: translateY(7%);
+}
+
+/* 第二行span交错 */
+.content-box .text-content .s-line span:nth-child(1) {
+    bottom: 8%;
+    -webkit-transform: translateY(-8%);
+    -moz-transform: translateY(-8%);
+    -ms-transform: translateY(-8%);
+    -o-transform: translateY(-8%);
+    transform: translateY(-8%);
+}
+.content-box .text-content .s-line span:nth-child(8) {
+    bottom: 8%;
+    -webkit-transform: translateY(-8%);
+    -moz-transform: translateY(-8%);
+    -ms-transform: translateY(-8%);
+    -o-transform: translateY(-8%);
+    transform: translateY(-8%);
+}
+
+/* 两张图字体颜色不一样 */
+.f-content .text-content .text-box .f-word {
+    color: var(--c-chisato-1);
+}
+.f-content .text-content .text-box .s-word {
+    color: var(--c-takina-1);
+}
+.s-content .text-content .text-box .f-word {
+    color: var(--c-chisato-2);
+}
+.s-content .text-content .text-box .s-word {
+    color: var(--c-takina-2);
+}
+
+/* 动画特效 */
+.content-box .text-content .f-line:hover span {
+    -webkit-transition: 1.25s ease-in-out;
+    -moz-transition: 1.25s ease-in-out;
+    -ms-transition: 1.25s ease-in-out;
+    -o-transition: 1.25s ease-in-out;
+    transition: 1.25s ease-in-out;
+}
+.content-box .text-content .s-line:hover span {
+    -webkit-transition: 1.7s ease-in-out;
+    -moz-transition: 1.7s ease-in-out;
+    -ms-transition: 1.7s ease-in-out;
+    -o-transition: 1.7s ease-in-out;
+    transition: 1.7s ease-in-out;
+}
+/* f-line 第一行hover特效 */
+.content-box .text-content .f-line:hover span {
+    filter: blur(1rem);
+    -webkit-filter: blur(1rem);
+    opacity: 0;
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+    -webkit-transition-delay: calc(var(--i) * 0.1s);
+    -moz-transition-delay: calc(var(--i) * 0.1s);
+    -ms-transition-delay: calc(var(--i) * 0.1s);
+    -o-transition-delay: calc(var(--i) * 0.1s);
+    transition-delay: calc(var(--i) * 0.1s);
+}
+/* s-line 第二行hover特效 */
+.content-box .text-content .s-line:hover span {
+    filter: blur(0.5rem);
+    opacity: 0;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}

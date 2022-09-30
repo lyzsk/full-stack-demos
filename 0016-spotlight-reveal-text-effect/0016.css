@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-notosans: "Noto Sans", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --radius-f-circle: 5.375rem;
+    --radius-s-circle: 1.875rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-image: url(./images/92375622_p0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center 0%;
+}
+
+/* 装h1的text-box设置绝对定位, 文字居中对齐 */
+.text-box {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    text-align: center;
+}
+
+.text-box h1 {
+    font-family: var(--font-notosans);
+    color: transparent;
+    font-size: 1.875rem;
+    font-weight: 900;
+    letter-spacing: 0.125rem;
+}
+
+.text-box h1::after {
+    content: attr(data-text);
+    color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgb(0, 0, 0), rgb(13, 13, 13));
+    /* 以文字的范围来裁剪背景图片 */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -ms-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+    /* circle(直径 at x y) */
+    clip-path: circle(var(--radius-f-circle) at 0% 50%);
+    -webkit-animation: spotlight-animate 5.4s infinite;
+    -moz-animation: spotlight-animate 5.4s infinite;
+    -ms-animation: spotlight-animate 5.4s infinite;
+    -o-animation: spotlight-animate 5.4s infinite;
+    animation: spotlight-animate 5.4s infinite;
+}
+
+/* 动画改变圆心位置 */
+@keyframes spotlight-animate {
+    0%,
+    100% {
+        clip-path: circle(var(--radius-f-circle) at 10% 50%);
+    }
+    /* 20%,
+    21% {
+        clip-path: circle(var(--radius-f-circle) at 22% 50%);
+    }
+    79%,
+    80% {
+        clip-path: circle(var(--radius-f-circle) at 22% 50%);
+    }
+    35%,
+    36% {
+        clip-path: circle(var(--radius-f-circle) at 75% 50%);
+    } */
+    50% {
+        clip-path: circle(var(--radius-f-circle) at 95% 50%);
+    }
+}

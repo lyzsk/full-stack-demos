@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-tc: "Noto Sans TC", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-animation-text-shadow: rgb(229, 96, 87);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container img {
+    position: relative;
+    width: min(100%, 1024px);
+    height: auto;
+    filter: brightness(0.85);
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: transparent;
+    font-family: var(--font-tc);
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(19, 19, 19, 0.4);
+}
+
+h1 span {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    -webkit-animation: animate 3s ease-in-out infinite;
+    -moz-animation: animate 3s ease-in-out infinite;
+    -ms-animation: animate 3s ease-in-out infinite;
+    -o-animation: animate 3s ease-in-out infinite;
+    animation: animate 3s ease-in-out infinite;
+    -webkit-animation-delay: calc(var(--i) * 1s);
+    -moz-animation-delay: calc(var(--i) * 1s);
+    -ms-animation-delay: calc(var(--i) * 1s);
+    -o-animation-delay: calc(var(--i) * 1s);
+    animation-delay: calc(var(--i) * 1s);
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        color: rgb(255, 255, 255);
+        filter: blur(0.125rem);
+        text-shadow: 0 0 0.625rem var(--c-animation-text-shadow),
+            0 0 0.625rem var(--c-animation-text-shadow),
+            0 0 1.25rem var(--c-animation-text-shadow),
+            0 0 2.5rem var(--c-animation-text-shadow),
+            0 0 5rem var(--c-animation-text-shadow),
+            0 0 7.5rem var(--c-animation-text-shadow),
+            0 0 12.5rem var(--c-animation-text-shadow),
+            0 0 18.75rem var(--c-animation-text-shadow),
+            0 0 25rem var(--c-animation-text-shadow);
+    }
+    15%,
+    85% {
+        color: transparent;
+        filter: blur(0rem);
+        text-shadow: none;
+    }
+}

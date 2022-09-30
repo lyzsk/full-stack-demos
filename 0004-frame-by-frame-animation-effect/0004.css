@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-box {
+    width: 33rem;
+    height: 33.75rem;
+    background-image: url(./images/100990513_p27.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.animation-box:hover {
+    -webkit-animation: animate 1.5s linear infinite;
+    -moz-animation: animate 1.5s linear infinite;
+    -ms-animation: animate 1.5s linear infinite;
+    -o-animation: animate 1.5s linear infinite;
+    animation: animate 1.5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-image: url(./images/100990513_p27.jpg);
+    }
+    33.33% {
+        background-image: url(./images/100990513_p28.jpg);
+    }
+    66.66% {
+        background-image: url(./images/100990513_p29.jpg);
+    }
+    100% {
+        background-image: url(./images/100990513_p27.jpg);
+    }
+}

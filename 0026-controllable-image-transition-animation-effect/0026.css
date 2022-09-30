@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+SC");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-sc: "Noto Sans SC", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.instructions {
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    padding-bottom: 0.375rem;
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.instructions .instructions-sc {
+    font-family: var(--font-sc);
+    font-size: 1.125rem;
+    letter-spacing: 0.875rem;
+}
+
+.instructions .instructions-en {
+    font-family: var(--font-en);
+    font-size: 0.875rem;
+    letter-spacing: 0.125rem;
+}

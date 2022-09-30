@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow-x: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.img-box {
+    max-width: 789px;
+    max-height: 520px;
+    width: 24.625rem;
+    height: 16.25rem;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.f-img-box {
+    background-image: url(./images/99814597_p0-1.jpg);
+    left: 5vw;
+    top: 15vh;
+}
+.s-img-box {
+    background-image: url(./images/99814597_p0-2.jpg);
+    right: 5vw;
+    bottom: 15vh;
+}
+
+.img-box::before,
+.img-box::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 防止偏移 */
+    display: block;
+    box-sizing: border-box;
+    /* 分别设置动画 */
+    -webkit-transition: clip-path 0.75s ease-in-out, transform 0.75s ease;
+    -moz-transition: clip-path 0.75s ease-in-out, transform 0.75s ease;
+    -ms-transition: clip-path 0.75s ease-in-out, transform 0.75s ease;
+    -o-transition: clip-path 0.75s ease-in-out, transform 0.75s ease;
+    transition: clip-path 0.75s ease-in-out, transform 0.75s ease;
+}
+.f-img-box::before,
+.f-img-box::after {
+    border: 0.25rem solid rgb(215, 89, 100);
+}
+.s-img-box::before,
+.s-img-box::after {
+    border: 0.25rem solid rgb(105, 179, 250);
+}
+
+/* inset(top right bottom left) */
+.img-box::before {
+    /* 裁剪左下角 */
+    clip-path: inset(0 calc(24.625rem - 4.75rem) calc(16.25rem - 3.5rem) 0);
+}
+.img-box::after {
+    /* 裁剪右下角 */
+    clip-path: inset(calc(16.25rem - 3.5rem) 0 0 calc(24.625rem - 4.75rem));
+}
+
+.img-box:hover::before,
+.img-box:hover::after {
+    clip-path: inset(0 0 0 0);
+}
+
+.img-box:hover {
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+    transform: scale(1.02);
+}
