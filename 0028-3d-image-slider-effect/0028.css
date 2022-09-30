@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    overflow: hidden;
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slicebox Style */
+.sb-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 15px -webkit-linear-gradient(transparent 50%, rgba(255, 255, 255, 0.15));
+}
+
+.sb-slider li {
+    display: none;
+    width: 50vw;
+    height: 70vh;
+}
+
+/* width:height 1:1.414 */
+.sb-slider li > img {
+    width: 50vw;
+    height: 70vh;
+    /* border: none; */
+    display: block;
+    object-fit: contain;
+}
+
+.sb-perspective {
+    position: relative;
+}
+
+.sb-perspective > div {
+    position: absolute;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.sb-side {
+    margin: 0;
+    display: block;
+    position: absolute;
+
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.nav-arrows {
+    display: none;
+}
+
+.nav-arrows a {
+    width: 42px;
+    height: 42px;
+    background: #cbbfae
+        url(https://tympanus.net/Development/Slicebox/images/nav.png) no-repeat
+        top left;
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    text-indent: -9000px;
+    cursor: pointer;
+    margin-top: -21px;
+    opacity: 0.9;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+.nav-arrows a:first-child {
+    left: auto;
+    right: 2px;
+    background-position: top right;
+}
+
+.nav-arrows a:hover {
+    opacity: 1;
+}
+
+.nav-dots {
+    position: relative;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    display: none;
+}
+
+.nav-dots span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 3px;
+    background: #cbbfae;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6),
+        inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.nav-dots span.nav-dot-current {
+    box-shadow: 0 1px 1px rgba(255, 255, 255, 0.6),
+        inset 0 1px 1px rgba(0, 0, 0, 0.1), inset 0 0 0 3px #cbbfae,
+        inset 0 0 0 8px #fff;
+}

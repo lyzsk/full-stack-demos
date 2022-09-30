@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323");
+
+:root {
+    --font-reveal: "VT323", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./images/75690947_p0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: saturate(1.1) brightness(0.85);
+}
+
+.text-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 15%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+p {
+    color: rgb(255, 255, 255);
+    font-family: var(--font-reveal);
+    font-size: 3.75rem;
+    font-weight: 500;
+}

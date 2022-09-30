@@ -74,6 +74,9 @@
 | [0025] | 滑动特效                  | ![0025-preview] |     | [上村なびあ]     | [back to top] |
 | [0026] | 可控制的图片过渡特效      | ![0026-preview] |     | [Ayloss]         | [back to top] |
 | [0027] | 滑动特效 II               | ![0027-preview] |     | [Q_Pulan]        | [back to top] |
+| [0028] | 3D 图片滑块特效 (TODO)    | ![0028-preview] |     | [liya]           | [back to top] |
+| [0029] | 复选框特效 (TODO)         | ![0029-preview] |     | [白の狐]         | [back to top] |
+| [0030] | 文字揭示特效              | ![0030-preview] |     | [紫光笙墨]       | [back to top] |
 
 # TODO
 
@@ -105,8 +108,11 @@
 [elve]: https://www.pixiv.net/users/3767787
 [hews]: https://www.pixiv.net/users/4338012/artworks
 [ayloss]: https://www.pixiv.net/users/27179454
-[akaringh]: https://www.pixiv.net/users/2693514
 [q_pulan]: https://www.pixiv.net/users/7529340
+[liya]: https://www.pixiv.net/users/187246
+[白の狐]: https://www.pixiv.net/users/24805094
+[紫光笙墨]: https://www.pixiv.net/users/69675427
+[akaringh]: https://www.pixiv.net/users/2693514
 [0001]: ./0001-parallax-scrolling-effect/
 [0002]: ./0002-split-words-on-hover-effect/
 [0003]: ./0003-multi-layer-image-slider-effect/
@@ -134,6 +140,9 @@
 [0025]: ./0025-scroll-effect/
 [0026]: ./0026-controllable-image-transition-animation-effect/
 [0027]: ./0027-scroll-effect-ii/
+[0028]: ./0028-3d-image-slider-effect/
+[0029]: ./0029-checkbox-effect/
+[0030]: ./0030-text-reveal-effect/
 [0001-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0001-preview.gif?raw=true
 [0002-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0002-preview.gif?raw=true
 [0003-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0003-preview.gif?raw=true
@@ -163,3 +172,6 @@
 [0025-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0025-preview.gif?raw=true
 [0026-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0026-preview.gif?raw=true
 [0027-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0027-preview.gif?raw=true
+[0028-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0028-preview.gif?raw=true
+[0029-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0029-preview.gif?raw=true
+[0030-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0030-preview.gif?raw=true
