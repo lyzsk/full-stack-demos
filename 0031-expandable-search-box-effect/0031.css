@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-search-box: rgb(49, 49, 49);
+    --c-search-text: rgb(134, 134, 134);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./images/101352123_p0.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: saturate(0.8) brightness(0.75) blur(2px);
+}
+
+.search-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 60px;
+    border-radius: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--c-search-box);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.search-box:hover > .search-text {
+    width: 360px;
+    padding-left: 5%;
+}
+
+.search-box:hover > .search-btn {
+    background-color: rgb(36, 36, 36);
+}
+
+.search-btn:hover {
+    color: rgb(233, 65, 24);
+}
+
+.search-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: var(--c-search-text);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.search-btn i {
+    font-size: 2rem;
+}
+
+.search-text {
+    font-family: var(--font-en);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 1.75rem;
+    text-align: left;
+    line-height: 60px;
+    width: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}

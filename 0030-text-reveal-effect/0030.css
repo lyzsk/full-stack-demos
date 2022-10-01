@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323");
 
 :root {
-    --font-reveal: "VT323", sans-serif;
+    --font-reveal: "VT323", monospace;
     --c-main-bg: rgb(28, 28, 28);
 }
 
