@@ -78,6 +78,7 @@
 | [0029] | 复选框特效 (TODO)         | ![0029-preview] |     | [白の狐]         | [back to top] |
 | [0030] | 文字揭示特效              | ![0030-preview] |     | [紫光笙墨]       | [back to top] |
 | [0031] | 可展开的搜索框特效        | ![0031-preview] |     | [wataboku]       | [back to top] |
+| [0032] | 光标揭示毛玻璃特效        | ![0032-preview] |     | [ごましおポン酢] | [back to top] |
 
 # TODO
 
@@ -115,6 +116,7 @@
 [紫光笙墨]: https://www.pixiv.net/users/69675427
 [wataboku]: https://www.pixiv.net/users/1602899
 [akaringh]: https://www.pixiv.net/users/2693514
+[ごましおポン酢]: https://www.pixiv.net/users/56895750
 [0001]: ./0001-parallax-scrolling-effect/
 [0002]: ./0002-split-words-on-hover-effect/
 [0003]: ./0003-multi-layer-image-slider-effect/
@@ -146,6 +148,7 @@
 [0029]: ./0029-checkbox-effect/
 [0030]: ./0030-text-reveal-effect/
 [0031]: ./0031-expandable-search-box-effect/
+[0032]: ./0032-frosted-glass-cursor-reveal-effect/
 [0001-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0001-preview.gif?raw=true
 [0002-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0002-preview.gif?raw=true
 [0003-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0003-preview.gif?raw=true
@@ -177,3 +180,4 @@
 [0029-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0029-preview.gif?raw=true
 [0030-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0030-preview.gif?raw=true
 [0031-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0031-preview.gif?raw=true
+[0032-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0032-preview.gif?raw=true
