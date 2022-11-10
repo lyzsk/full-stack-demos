@@ -80,6 +80,7 @@ Make a flag and update it every day!
 | [0031] | exandable search box effect                    | ![0031-preview] |     | [wataboku]       | [back to top] |
 | [0032] | frosted glass cursor reveal effect             | ![0032-preview] |     | [ごましおポン酢] | [back to top] |
 | [0033] | plane follow cursor effect                     | ![0033-preview] |     | [やぶのき]       | [back to top] |
+| [0034] | cyberpunk style button with hover effect       | ![0034-preview] |     | [吉川紘 (Hiro)]  | [back to top] |
 
 # TODO
 
@@ -119,6 +120,7 @@ Make a flag and update it every day!
 [akaringh]: https://www.pixiv.net/users/2693514
 [ごましおポン酢]: https://www.pixiv.net/users/56895750
 [やぶのき]: https://www.pixiv.net/users/12746843
+[吉川紘 (hiro)]: https://www.pixiv.net/users/3093884
 [0001]: ./0001-parallax-scrolling-effect/
 [0002]: ./0002-split-words-on-hover-effect/
 [0003]: ./0003-multi-layer-image-slider-effect/
@@ -152,6 +154,7 @@ Make a flag and update it every day!
 [0031]: ./0031-expandable-search-box-effect/
 [0032]: ./0032-frosted-glass-cursor-reveal-effect/
 [0033]: ./0033-plane-follow-cursor-effect/
+[0034]: ./0034-cyberpunk-style-button-with-hover-effect/
 [0001-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0001-preview.gif?raw=true
 [0002-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0002-preview.gif?raw=true
 [0003-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0003-preview.gif?raw=true
@@ -185,3 +188,4 @@ Make a flag and update it every day!
 [0031-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0031-preview.gif?raw=true
 [0032-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0032-preview.gif?raw=true
 [0033-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0033-preview.gif?raw=true
+[0034-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0034-preview.gif?raw=true

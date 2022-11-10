@@ -1,0 +1,242 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+:root {
+    --font-en: "VT323", monospace;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-text: rgb(255, 255, 255);
+    --c-yellow: rgb(255, 240, 77);
+    --c-red: rgb(255, 51, 51);
+    --c-blue: rgb(0, 255, 255);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-en);
+    box-sizing: border-box;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-yellow);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+
+.img {
+    width: 70%;
+    height: 50%;
+    background-image: url(./images/101366360_p0.png);
+    background-position: 50% 10%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0.125rem 0.125rem 0.375rem rgb(0, 0, 0);
+}
+
+.button {
+    width: 16rem;
+    height: 4rem;
+    margin-top: 1rem;
+    background-color: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button::after,
+.button::before,
+.glitch {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        calc(100% - 25px) 100%,
+        calc(100% - 25px) calc(100% - 10px),
+        calc(100% - 55px) calc(100% - 10px),
+        calc(100% - 55px) 100%,
+        20px 100%,
+        0 calc(100% - 20px)
+    );
+}
+
+.button::before {
+    left: 2px;
+    background-color: var(--c-blue);
+}
+
+.button::after {
+    background-color: var(--c-red);
+}
+
+.glitch {
+    background-color: var(--c-red);
+    box-shadow: 0 0 0 0.125rem var(--c-blue);
+    z-index: 2;
+    opacity: 0;
+}
+
+.text {
+    color: var(--c-text);
+    font-family: var(--font-en);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    z-index: 3;
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    text-shadow: 0.125rem 0.125rem 0rem var(--c-blue),
+        -0.125rem -0.125rem 0rem var(--c-yellow);
+    opacity: 0;
+}
+
+.button:hover .glitch,
+.button:hover .text::before {
+    animation: glitch-effect 2s infinite;
+    opacity: 1;
+}
+
+.platform {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    right: 1.75rem;
+    bottom: -0.25rem;
+    font-family: var(--font-en);
+    font-size: 0.75rem;
+    letter-spacing: 0.125rem;
+    font-weight: 600;
+}
+
+@keyframes glitch-effect {
+    0% {
+        clip-path: polygon(0 0, 100% 0, 100% 2%, 0 2%);
+    }
+    5% {
+        clip-path: polygon(0 8%, 100% 8%, 100% 16%, 0 16%);
+    }
+    10% {
+        clip-path: polygon(0 80%, 100% 80%, 100% 88%, 0 88%);
+        -webkit-transform: translate3d(-5px, 0, 0);
+        -moz-transform: translate3d(-5px, 0, 0);
+        -ms-transform: translate3d(-5px, 0, 0);
+        -o-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    15% {
+        clip-path: polygon(0 80%, 100% 80%, 100% 88%, 0 88%);
+        -webkit-transform: translate3d(5px, 0, 0);
+        -moz-transform: translate3d(5px, 0, 0);
+        -ms-transform: translate3d(5px, 0, 0);
+        -o-transform: translate3d(5px, 0, 0);
+        transform: translate3d(5px, 0, 0);
+    }
+    16% {
+        clip-path: polygon(0 80%, 100% 80%, 100% 88%, 0 88%);
+        -webkit-transform: translate3d(5px, 0, 0);
+        -moz-transform: translate3d(5px, 0, 0);
+        -ms-transform: translate3d(5px, 0, 0);
+        -o-transform: translate3d(5px, 0, 0);
+        transform: translate3d(5px, 0, 0);
+    }
+    17% {
+        clip-path: polygon(0 90%, 100% 90%, 100% 100%, 0 100%);
+        -webkit-transform: translate3d(5px, 0, 0);
+        -moz-transform: translate3d(5px, 0, 0);
+        -ms-transform: translate3d(5px, 0, 0);
+        -o-transform: translate3d(5px, 0, 0);
+        transform: translate3d(5px, 0, 0);
+    }
+    18% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    20% {
+        clip-path: polygon(0 30%, 100% 30%, 100% 65%, 0 65%);
+    }
+    25% {
+        clip-path: polygon(0 30%, 100% 30%, 100% 65%, 0 65%);
+        -webkit-transform: translate3d(-5px, 0, 0);
+        -moz-transform: translate3d(-5px, 0, 0);
+        -ms-transform: translate3d(-5px, 0, 0);
+        -o-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    28% {
+        clip-path: polygon(0 30%, 100% 30%, 100% 65%, 0 65%);
+        -webkit-transform: translate3d(-5px, 0, 0);
+        -moz-transform: translate3d(-5px, 0, 0);
+        -ms-transform: translate3d(-5px, 0, 0);
+        -o-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    29% {
+        clip-path: polygon(0 30%, 100% 30%, 100% 65%, 0 65%);
+        -webkit-transform: translate3d(5px, 0, 0);
+        -moz-transform: translate3d(5px, 0, 0);
+        -ms-transform: translate3d(5px, 0, 0);
+        -o-transform: translate3d(5px, 0, 0);
+        transform: translate3d(5px, 0, 0);
+    }
+    30% {
+        clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
+    }
+
+    40% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 60%, 0 60%);
+    }
+    42% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 60%, 0 60%);
+        -webkit-transform: translate3d(-5px, 0, 0);
+        -moz-transform: translate3d(-5px, 0, 0);
+        -ms-transform: translate3d(-5px, 0, 0);
+        -o-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    45% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 60%, 0 60%);
+        transform: translate3d(5px, 0, 0);
+    }
+    48% {
+        clip-path: polygon(0 45%, 100% 45%, 100% 60%, 0 60%);
+        -webkit-transform: translate3d(-5px, 0, 0);
+        -moz-transform: translate3d(-5px, 0, 0);
+        -ms-transform: translate3d(-5px, 0, 0);
+        -o-transform: translate3d(-5px, 0, 0);
+        transform: translate3d(-5px, 0, 0);
+    }
+    50% {
+        clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+    }
+    60% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+    }
+    100% {
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        -webkit-transform: translate3d(0, 0, 0);
+        -moz-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        -o-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
