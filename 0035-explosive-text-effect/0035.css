@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+@import url("https://fonts.googleapis.com/earlyaccess/notosansjapanese.css");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --font-jp: "Noto Sans Japanese", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    user-select: none;
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    font-size: 0;
+}
+
+.bg-img {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(./images/91476987_p0.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    filter: brightness(0.9) saturate(0.5) blur(0.125rem);
+    z-index: -1;
+}
+
+span.check {
+    display: inline-block;
+    font-family: var(--font-jp);
+    font-size: 2.5rem;
+    letter-spacing: 0.125rem;
+}
