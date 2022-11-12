@@ -82,6 +82,8 @@ Make a flag and update it every day!
 | [0033] | plane follow cursor effect                     | ![0033-preview] |     | [やぶのき]       | [back to top] |
 | [0034] | cyberpunk style button with hover effect       | ![0034-preview] |     | [吉川紘 (Hiro)]  | [back to top] |
 | [0035] | explosive text effect                          | ![0035-preview] |     | [ソル]           | [back to top] |
+| [0036] | image to particle effect                       | ![0036-preview] |     | [杜野わこ]       | [back to top] |
+| [0037] | particle to image effect                       | ![0037-preview] |     | [杜野わこ]       | [back to top] |
 
 # TODO
 
@@ -123,6 +125,7 @@ Make a flag and update it every day!
 [やぶのき]: https://www.pixiv.net/users/12746843
 [吉川紘 (hiro)]: https://www.pixiv.net/users/3093884
 [ソル]: https://www.pixiv.net/users/29395299
+[杜野わこ]: https://www.pixiv.net/users/59654750
 [0001]: ./0001-parallax-scrolling-effect/
 [0002]: ./0002-split-words-on-hover-effect/
 [0003]: ./0003-multi-layer-image-slider-effect/
@@ -158,6 +161,8 @@ Make a flag and update it every day!
 [0033]: ./0033-plane-follow-cursor-effect/
 [0034]: ./0034-cyberpunk-style-button-with-hover-effect/
 [0035]: ./0035-explosive-text-effect/
+[0036]: ./0036-image-to-particle-effect/
+[0037]: ./0037-particle-to-image-effect/
 [0001-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0001-preview.gif?raw=true
 [0002-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0002-preview.gif?raw=true
 [0003-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0003-preview.gif?raw=true
@@ -193,3 +198,5 @@ Make a flag and update it every day!
 [0033-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0033-preview.gif?raw=true
 [0034-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0034-preview.gif?raw=true
 [0035-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0035-preview.gif?raw=true
+[0036-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0036-preview.gif?raw=true
+[0037-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0037-preview.gif?raw=true
