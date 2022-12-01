@@ -1,0 +1,40 @@
+:root {
+    --c-main-bg: rgb(223, 211, 195);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--c-main-bg);
+    user-select: none;
+}
+
+.main-container {
+    /* 不加w,h会在下方出现白边,因为子元素有border */
+    width: 600px;
+    height: 400px;
+    position: relative;
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.4);
+}
+
+img {
+    border: 0.125rem solid rgba(0, 0, 0, 0.6);
+}
+
+.img-magnifier-glass {
+    width: 8rem;
+    height: 8rem;
+    position: absolute;
+    border: 0.25rem solid rgb(251, 161, 161);
+    border-radius: 50%;
+    cursor: none;
+}

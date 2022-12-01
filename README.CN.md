@@ -85,6 +85,8 @@
 | [0036] | 图片转化粒子特效          | ![0036-preview] |     | [杜野わこ]       | [back to top] |
 | [0037] | 粒子转化图片特效          | ![0037-preview] |     | [杜野わこ]       | [back to top] |
 | [0038] | 排序词语人机验证          | ![0038-preview] |     | [Ryzatsu]        | [back to top] |
+| [0039] |                           |                 |     |                  | [back to top] |
+| [0040] | 图片悬停放大镜特效        | ![0040-preview] |     | [iren]           | [back to top] |
 
 # TODO
 
@@ -129,6 +131,7 @@
 [ソル]: https://www.pixiv.net/users/29395299
 [杜野わこ]: https://www.pixiv.net/users/59654750
 [ryzatsu]: https://www.pixiv.net/users/86243827
+[iren]: https://www.pixiv.net/en/users/34209175
 [0001]: ./0001-parallax-scrolling-effect/
 [0002]: ./0002-split-words-on-hover-effect/
 [0003]: ./0003-multi-layer-image-slider-effect/
@@ -167,6 +170,7 @@
 [0036]: ./0036-image-to-particle-effect/
 [0037]: ./0037-particle-to-image-effect/
 [0038]: ./0038-ordering-text-to-word-human-verification/
+[0040]: ./0040-image-magnifier-glass-on-hover-effect/
 [0001-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0001-preview.gif?raw=true
 [0002-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0002-preview.gif?raw=true
 [0003-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0003-preview.gif?raw=true
@@ -205,3 +209,5 @@
 [0036-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0036-preview.gif?raw=true
 [0037-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0037-preview.gif?raw=true
 [0038-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0038-preview.gif?raw=true
+[0039-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0039-preview.gif?raw=true
+[0040-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0040-preview.gif?raw=true
