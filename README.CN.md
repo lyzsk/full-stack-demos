@@ -87,6 +87,7 @@
 | [0038] | 排序词语人机验证          | ![0038-preview] |     | [Ryzatsu]        | [back to top] |
 | [0039] |                           |                 |     |                  | [back to top] |
 | [0040] | 图片悬停放大镜特效        | ![0040-preview] |     | [iren]           | [back to top] |
+| [0041] | 除了特定元素全局灰白      | ![0041-preview] |     | [Mika Pikazo]    | [back to top] |
 
 # TODO
 
@@ -132,6 +133,7 @@
 [杜野わこ]: https://www.pixiv.net/users/59654750
 [ryzatsu]: https://www.pixiv.net/users/86243827
 [iren]: https://www.pixiv.net/en/users/34209175
+[mika pikazo]: https://www.pixiv.net/users/1039353
 [0001]: ./0001-parallax-scrolling-effect/
 [0002]: ./0002-split-words-on-hover-effect/
 [0003]: ./0003-multi-layer-image-slider-effect/
@@ -171,6 +173,7 @@
 [0037]: ./0037-particle-to-image-effect/
 [0038]: ./0038-ordering-text-to-word-human-verification/
 [0040]: ./0040-image-magnifier-glass-on-hover-effect/
+[0041]: ./0041-grayscale-page-except-particular-elements/
 [0001-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0001-preview.gif?raw=true
 [0002-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0002-preview.gif?raw=true
 [0003-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0003-preview.gif?raw=true
@@ -211,3 +214,4 @@
 [0038-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0038-preview.gif?raw=true
 [0039-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0039-preview.gif?raw=true
 [0040-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0040-preview.gif?raw=true
+[0041-preview]: https://github.com/lyzsk/support-repo/blob/master/html-css-js-demos/previews/0041-preview.gif?raw=true

@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+    --c-text: rgb(233, 119, 119);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html:not(.img-box) {
+    /* -webkit-filter: grayscale(0.95) saturate(0.85);
+    -moz-filter: grayscale(0.95) saturate(0.85);
+    -ms-filter: grayscale(0.95) saturate(0.85);
+    -o-filter: grayscale(0.95) saturate(0.85); */
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+    font-family: var(--font-en);
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    color: var(--c-text);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.125rem;
+    margin-bottom: 2rem;
+    user-select: none;
+    -webkit-filter: grayscale(0.95) saturate(0.85);
+    -moz-filter: grayscale(0.95) saturate(0.85);
+    -ms-filter: grayscale(0.95) saturate(0.85);
+    -o-filter: grayscale(0.95) saturate(0.85);
+}
+
+.img {
+    position: relative;
+    object-fit: cover;
+}
+
+img:not(.first-img) {
+    margin-left: 60px;
+}
+
+img:not(.second-img) {
+    -webkit-filter: grayscale(0.95) saturate(0.85);
+    -moz-filter: grayscale(0.95) saturate(0.85);
+    -ms-filter: grayscale(0.95) saturate(0.85);
+    -o-filter: grayscale(0.95) saturate(0.85);
+}
