@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "1673c1f0-5471-4569-99d5-f88622b14bbc",
+		"name": "java-demo-0004",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20958494"
+	},
+	"item": [
+		{
+			"name": "test-jwt-captcha",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.sendRequest(\"http://localhost:8081/captcha\", function (err, response) {\r",
+							"    console.log(response.json());\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/login?username=user&password=666666&token=aaaaa&code=11111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "user"
+						},
+						{
+							"key": "password",
+							"value": "666666"
+						},
+						{
+							"key": "token",
+							"value": "aaaaa",
+							"description": "redis里的key"
+						},
+						{
+							"key": "code",
+							"value": "11111",
+							"description": "验证码"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-jwt-filter",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY3MTM4NTUxOCwiZXhwIjoxNjcxOTkwMzE4fQ.Nsb1qivjdplY1VHOSWGE37DY2leQFVO_wuB2wBxzO_qtJd7Ob37PTTpPWuKj4VVuEfE4jkIyLvRDpv8HN1bZuQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/test/pass",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"test",
+						"pass"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-nav",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY3MTQ0ODUyMiwiZXhwIjoxNjcyMDUzMzIyfQ.7shWSadxboKkd4qbD_1Oh4e-oTzRcXnheVsrgzKFkXjDT70CljPT60tDnE4fMqhq088BZ_z3z1Qncg3h3uu9ig",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/sys/menu/nav",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sys",
+						"menu",
+						"nav"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "test-userInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJ0eXBlIjoiSldUIiwiYWxnIjoiSFM1MTIifQ.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY3MTQ0ODUyMiwiZXhwIjoxNjcyMDUzMzIyfQ.7shWSadxboKkd4qbD_1Oh4e-oTzRcXnheVsrgzKFkXjDT70CljPT60tDnE4fMqhq088BZ_z3z1Qncg3h3uu9ig",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8081/sys/userInfo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"sys",
+						"userInfo"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
