@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sichu.mybatis.mapper.UserMapper">
+    <insert id="insertUser">
+        insert into t_user values(null, '田七', '666', 25, '女', 'tianqi@163.com')
+    </insert>
+    <update id="updateUser">
+        update t_user set username='张三' where id='9'
+    </update>
+    <delete id="deleteUser">
+        delete from t_user where id=14
+    </delete>
+    <select id="getUserById" resultType="cn.sichu.mybatis.pojo.User">
+        select * from t_user where id=1
+    </select>
+    <select id="getAllUser" resultType="cn.sichu.mybatis.pojo.User">
+        select * from t_user
+    </select>
+</mapper>

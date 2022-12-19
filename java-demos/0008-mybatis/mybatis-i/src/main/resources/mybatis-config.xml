@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    
+    <!--  引入properties  -->
+    <properties resource="jdbc.properties" />
+
+    <!--  设置类型别名  -->
+    <typeAliases>
+<!--        <typeAlias type="cn.sichu.mybatis.pojo.User" alias="User"></typeAlias>-->
+        <!--    以包为单位, 设置所有类的默认别名=类名    -->
+        <package name="cn.sichu.mybatis.pojo"/>
+    </typeAliases>
+    <!--
+    配置多个连接数据库的环境
+    属性:
+        default: 设置默认使用的环境的id
+      -->
+    <environments default="development">
+        <!--
+            environment: 配置某个具体的环境
+            属性:
+                id: 表示连接数据库的环境的唯一标识, 不能重复
+              -->
+        <environment id="development">
+            <!--
+                transactionManager: 设置事务管理方式
+                属性:
+                    type="[JDBC|MANAGED]"
+                    JDBC: 表示当前环境中, 执行SQL时, 使用原生的事务管理方式, 即手动commit, roll back
+                    MANAGED: 被管理, 例如Spring
+                  -->
+            <transactionManager type="JDBC"/>
+            <!--
+                dataSource: 配置数据源
+                属性:
+                    type: POOLED|UNPOOLED|JNDI
+                    POOLED: 使用数据库连接池缓存数据库连接
+                    UNPOOLED: 不适用数据库连接池
+                    JNDI: 使用上下文中的数据源
+                   -->
+            <dataSource type="POOLED">
+<!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--  引入映射文件  -->
+    <mappers>
+<!--        <mapper resource="mappers/UserMapper.xml"/>-->
+        <!--
+        以包为单位引入映射文件的要求:
+        1. mapper接口所在的包, 要和映射文件所在的包一致
+        2. mapper接口要和映射文件的名字一致
+             -->
+        <package name="cn.sichu.mybatis.mapper"/>
+    </mappers>
+</configuration>

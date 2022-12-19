@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springboot_vue?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: root
+#  main:
+#    allow-circular-references: true
+#  security:
+#    user:
+#      name: user
+#      password: 666666
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+sichu:
+  jwt:
+    header: Authorization
+    expire: 604800 #7天，秒单位
+    secret: g2589inhbf41njparoiahtarh31uejna  #随机32位密钥

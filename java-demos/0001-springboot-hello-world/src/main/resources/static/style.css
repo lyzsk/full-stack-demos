@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
+
+:root {
+    --font-en: "Poppins", sans-serif;
+    --c-main-bg: rgb(28, 28, 28);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--c-main-bg);
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container a {
+    margin-bottom: 10px;
+}
+
+.main-container form {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-family: var(--font-en);
+}
+
+.main-container form div {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container form div label {
+    margin-bottom: 10px;
+    user-select: none;
+}
+.main-container form div input {
+    margin-bottom: 10px;
+}
+.main-container form div button {
+    margin-bottom: 10px;
+}

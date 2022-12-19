@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sichu.mybatis.mapper.DynamicSqlMapper">
+    <insert id="insertMultiByList">
+        insert into t_emp values
+        <foreach collection="emps" item="emp" separator=",">
+            (null, #{emp.empName}, #{emp.age}, #{emp.gender}, #{emp.email}, null)
+        </foreach>
+    </insert>
+
+    <delete id="deleteMultiByArrayOne">
+        delete from t_emp where eid in
+        (
+        <foreach collection="eids" item="eid" separator="," open="(" close=")">
+            #{eid}
+        </foreach>
+        )
+    </delete>
+
+    <delete id="deleteMultiByArray">
+        delete from t_emp where
+        <foreach collection="eids" item="eid" separator="or">
+            eid = #{eid}
+        </foreach>
+    </delete>
+
+    <select id="getEmpByConditionsOne" resultType="cn.sichu.mybatis.pojo.Emp">
+        select * from t_emp where 1=1
+        <if test="empName != null and empName != ''">
+            and emp_name = #{empName}
+        </if>
+        <if test="age != null and age != ''">
+            and age = #{age}
+        </if>
+        <if test="gender != null and gender != ''">
+            and gender = #{gender}
+        </if>
+        <if test="email != null and email !=''">
+            and email = #{email}
+        </if>
+    </select>
+
+    <select id="getEmpByConditionsTwo" resultType="cn.sichu.mybatis.pojo.Emp">
+        select * from t_emp
+        <where>
+            <if test="empName != null and empName != ''">
+                emp_name = #{empName}
+            </if>
+            <if test="age != null and age != ''">
+                and age = #{age}
+            </if>
+            <if test="gender != null and gender != ''">
+                and gender = #{gender}
+            </if>
+            <if test="email != null and email !=''">
+                and email = #{email}
+            </if>
+        </where>
+    </select>
+
+    <select id="getEmpByConditionsThree" resultType="cn.sichu.mybatis.pojo.Emp">
+        select * from t_emp
+        <trim prefix="where" suffixOverrides="and|or">
+            <if test="empName != null and empName != ''">
+                emp_name = #{empName} and
+            </if>
+            <if test="age != null and age != ''">
+                age = #{age} or
+            </if>
+            <if test="gender != null and gender != ''">
+                gender = #{gender} and
+            </if>
+            <if test="email != null and email !=''">
+                email = #{email}
+            </if>
+        </trim>
+    </select>
+
+    <sql id="empColumns">eid,emp_name,age,gender,email</sql>
+
+    <select id="getEmpByConditions" resultType="cn.sichu.mybatis.pojo.Emp">
+        select <include refid="empColumns"></include> from t_emp
+        <trim prefix="where" suffixOverrides="and|or">
+            <if test="empName != null and empName != ''">
+                emp_name = #{empName} and
+            </if>
+            <if test="age != null and age != ''">
+                age = #{age} or
+            </if>
+            <if test="gender != null and gender != ''">
+                gender = #{gender} and
+            </if>
+            <if test="email != null and email !=''">
+                email = #{email}
+            </if>
+        </trim>
+    </select>
+
+
+    <select id="getEmpByChoose" resultType="cn.sichu.mybatis.pojo.Emp">
+        select * from t_emp
+        <where>
+            <choose>
+                <when test="empName != null and empName != ''">
+                    emp_name = #{empName}
+                </when>
+                <when test="age != null and age != ''">
+                    age = #{age}
+                </when>
+                <when test="gender != null and gender != ''">
+                    gender = #{gender}
+                </when>
+                <when test="email != null and email != ''">
+                    email = #{email}
+                </when>
+                <otherwise>
+                    did = 2
+                </otherwise>
+            </choose>
+        </where>
+    </select>
+</mapper>

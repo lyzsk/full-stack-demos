@@ -1,0 +1,53 @@
+2022-11-30 02:45:33  [ main:0 ] - [ INFO ]  test logger
+2022-11-30 03:02:47  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] /nList<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:03:04  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:03:47  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:03:47  [ main:2 ] - [ DEBUG ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:07:35  [ main:0 ] - [ INFO ]  Integer[]: [1, 2, 3, 4, 5] 
+List<Integer>: [1, 2, 3, 4, 5]
+2022-11-30 03:14:12  [ main:0 ] - [ INFO ]  Integer[]: [1, 3, 5, 7], type: class [Ljava.lang.Integer; 
+int[]: [1, 3, 5, 7], type: class [I
+2022-11-30 03:14:42  [ main:0 ] - [ INFO ]  Integer[]: [1, 3, 5, 7], type: class [Ljava.lang.Integer; 
+int[]: [1, 3, 5, 7], type: class [I
+2022-11-30 03:20:25  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 6], type: class [I 
+Integer[]: [1, 3, 5, 6], type: class [Ljava.lang.Integer;
+2022-11-30 03:25:46  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3, 4, 4], type: class java.util.ArrayList 
+int[]: [1, 2, 3, 4, 4], type: [}
+2022-11-30 03:26:16  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3, 4, 4], type: class java.util.ArrayList 
+int[]: [1, 2, 3, 4, 4], type: [}
+2022-11-30 03:26:40  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3, 4, 4], type: class java.util.ArrayList 
+int[]: [1, 2, 3, 4, 4], type: [}
+2022-11-30 03:28:53  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3, 4, 4], type: class java.util.ArrayList 
+int[]: [1, 2, 3, 4, 4], type: [}
+2022-11-30 03:28:53  [ main:3 ] - [ INFO ]  res class: class [I
+2022-11-30 03:32:47  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3] 
+Integer[]: [1, 2, 3]
+2022-11-30 03:32:47  [ main:4 ] - [ INFO ]  res type: 1
+2022-11-30 03:32:47  [ main:4 ] - [ INFO ]  '==': false
+2022-11-30 03:32:47  [ main:4 ] - [ INFO ]  equals: false
+2022-11-30 03:33:13  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3] 
+Integer[]: [1, 2, 3]
+2022-11-30 03:33:13  [ main:3 ] - [ INFO ]  res type: class [Ljava.lang.Integer;
+2022-11-30 03:33:13  [ main:3 ] - [ INFO ]  '==': false
+2022-11-30 03:33:13  [ main:3 ] - [ INFO ]  equals: false
+2022-11-30 03:35:40  [ main:0 ] - [ INFO ]  List<Integer>: [1, 2, 3] 
+Integer[]: [1, 2, 3]
+2022-11-30 03:35:40  [ main:3 ] - [ INFO ]  res type: class [Ljava.lang.Integer;
+2022-11-30 03:35:40  [ main:3 ] - [ INFO ]  '==': false
+2022-11-30 03:35:40  [ main:3 ] - [ INFO ]  equals: false
+2022-11-30 03:35:40  [ main:3 ] - [ INFO ]  deepequals: true
+2022-11-30 03:41:40  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:41:40  [ main:3 ] - [ DEBUG ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:41:55  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:41:55  [ main:2 ] - [ DEBUG ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:42:00  [ main:0 ] - [ INFO ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]
+2022-11-30 03:42:00  [ main:3 ] - [ DEBUG ]  int[]: [1, 3, 5, 7, 2, 4, 6, 8] 
+List<Integer>: [1, 3, 5, 7, 2, 4, 6, 8]

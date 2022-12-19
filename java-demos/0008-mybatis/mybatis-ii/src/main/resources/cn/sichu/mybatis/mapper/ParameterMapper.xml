@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sichu.mybatis.mapper.ParameterMapper">
+    <sql id="userColumns">id,username,password,age,gender,email</sql>
+    <insert id="insertUserWithParameter">
+        insert into t_user values(null,#{username},#{password},#{age},#{gender},#{email})
+    </insert>
+    <select id="checkLoginByParam" resultType="cn.sichu.mybatis.pojo.User">
+        select
+        <include refid="userColumns"/>
+        from t_user
+        where username=#{username} and password=#{password}
+    </select>
+    <select id="checkLoginByMap" resultType="cn.sichu.mybatis.pojo.User">
+        select
+        <include refid="userColumns"/>
+        from t_user where username=#{username} and password=#{password}
+    </select>
+    <select id="getUserByUsername" resultType="cn.sichu.mybatis.pojo.User">
+        select
+        <include refid="userColumns"/>
+        from t_user where username=#{username}
+    </select>
+    <select id="checkLoginWithoutParam" resultType="cn.sichu.mybatis.pojo.User">
+        select * from t_user where username=#{arg0} and password=#{param2}
+    </select>
+</mapper>

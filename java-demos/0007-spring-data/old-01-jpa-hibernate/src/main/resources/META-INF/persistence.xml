@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             version="2.0"
+             xmlns="http://java.sun.com/xml/ns/persistence"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+    <!--    persistence-unit 持久化单元:
+                    name: 持久化单元名称
+                    trasaction-type: 事务管理方式
+                            JTA: 分布式事务管理
+                            RESOURCE_LOCAL: 本地事务管理-->
+    <persistence-unit name="hibernateJPA" transaction-type="RESOURCE_LOCAL">
+
+        <!--        JPA的实现方式-->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!--        需要进行ORM的POJO类-->
+        <class>cn.sichu.pojo.Customer</class>
+
+        <properties>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="root"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <!--            <property name="javax.persistence.jdbc.url"-->
+            <!--                      value="jdbc:mysql://localhost:3306/springdata_jpa"/>-->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/springdata_jpa?characterEncoding=utf-8&amp;useSSL=false&amp;useUnicode=true&amp;serverTimezone=UTC"/>
+
+            <!--            hibernate独有的配置信息-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sichu.mybatis.mapper.SelectMapper">
+    <select id="getCount" resultType="java.lang.Integer">
+        select count(*) from t_user
+    </select>
+    <sql id="userColumns">id,username,password,age,gender,email</sql>
+    <select id="getUserByIdToMap" resultType="java.util.Map">
+        select
+        <include refid="userColumns"/>
+        from t_user where id=#{id}
+    </select>
+    <select id="getAllUserToMap" resultType="java.util.Map">
+        select * from t_user
+    </select>
+</mapper>

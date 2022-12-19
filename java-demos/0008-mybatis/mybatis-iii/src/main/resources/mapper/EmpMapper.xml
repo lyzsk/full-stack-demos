@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sichu.mybatis.mapper.EmpMapper">
+    <resultMap id="empResultMap" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="gender" column="gender"></result>
+        <result property="email" column="email"></result>
+    </resultMap>
+
+    <select id="getAllEmp" resultMap="empResultMap">
+        select * from t_emp
+    </select>
+    <!--    <select id="getAllEmp" resultType="cn.sichu.mybatis.pojo.Emp">-->
+    <!--        &lt;!&ndash;        select eid, emp_name empName, age, gender, email from t_emp&ndash;&gt;-->
+    <!--        select * from t_emp-->
+    <!--    </select>-->
+
+    <resultMap id="empAndDeptResultMapOne" type="emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="gender" column="gender"></result>
+        <result property="email" column="email"></result>
+        <result property="dept.did" column="did"></result>
+        <result property="dept.deptName" column="dept_name"></result>
+    </resultMap>
+
+    <resultMap id="empAndDeptResultMapTwo" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="gender" column="gender"></result>
+        <result property="email" column="email"></result>
+        <association property="dept" javaType="Dept">
+            <id property="did" column="did"></id>
+            <result property="deptName" column="dept_name"></result>
+        </association>
+    </resultMap>
+    <!--    <select id="getEmpAndDept" resultMap="empAndDeptResultMapOne">-->
+    <!--        select * from t_emp left join t_dept on t_emp.did = t_dept.did-->
+    <!--        where t_emp.eid = #{eid}-->
+    <!--    </select>-->
+    <select id="getEmpAndDept" resultMap="empAndDeptResultMapTwo">
+        select * from t_emp left join t_dept on t_emp.did = t_dept.did
+        where t_emp.eid = #{eid}
+    </select>
+
+    <resultMap id="empAndDeptByStepResultMap" type="Emp">
+        <id property="eid" column="eid"></id>
+        <result property="empName" column="emp_name"></result>
+        <result property="age" column="age"></result>
+        <result property="gender" column="gender"></result>
+        <result property="email" column="email"></result>
+        <association property="dept"
+                     select="cn.sichu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo"
+                     column="did"
+                     fetchType="eager"></association>
+    </resultMap>
+
+    <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">
+        select * from t_emp where eid = #{eid}
+    </select>
+
+    <select id="getDeptAndEmpByStepTwo" resultType="cn.sichu.mybatis.pojo.Emp">
+        select * from t_emp where did = #{did}
+    </select>
+
+</mapper>

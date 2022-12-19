@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!--        配置数据库连接信息-->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/springdata_jpa?characterEncoding=utf-8&amp;useSSL=false&amp;useUnicode=true&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+
+        <!--        允许显示sql语句, 默认false-->
+        <property name="show_sql">true</property>
+        <!--        是否格式化sql, 默认false-->
+        <property name="format_sql">true</property>
+        <!--        表的生成策略
+                        none        默认值, 不自动生成
+                        update      如果没有表会自动创建, 有会检查更新
+                        create      每次运行都会创建-->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!--        配置数据库方言-->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!--        指定哪些pojo需要ORM映射-->
+        <mapping class="cn.sichu.pojo.Customer"/>
+
+    </session-factory>
+</hibernate-configuration>
