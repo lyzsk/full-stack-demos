@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="test"></div>
+
+        <script type="text/babel">
+            class Life extends React.Component {
+                state = { opacity: 1 };
+
+                goDie = () => {
+                    ReactDOM.unmountComponentAtNode(
+                        document.getElementById("test")
+                    );
+                };
+
+                componentDidMount() {
+                    this.timer = setInterval(() => {
+                        let { opacity } = this.state;
+                        opacity -= 0.1;
+                        if (opacity <= 0) {
+                            opacity = 1;
+                        }
+                        this.setState({ opacity });
+                    }, 200);
+                }
+
+                componentWillUnmount() {
+                    clearInterval(this.timer);
+                }
+
+                render() {
+                    console.log("render");
+                    return (
+                        <div>
+                            <h2 style={{ opacity: this.state.opacity }}>
+                                React学不会了怎么办?
+                            </h2>
+                            <button onClick={this.goDie}>不活了</button>
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<Life />, document.getElementById("test"));
+        </script>
+    </body>
+</html>

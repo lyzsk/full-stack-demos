@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hello World</title>
+        <!-- 注意顺序, 先核心库, 再DOM支持, 再jsx转js -->
+        <!-- <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+        <!-- development version -->
+        <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <style>
+            .jsx-snippets-style {
+                background-color: #fd8a8a;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 18版本前后区别 -->
+        <div id="test1"></div>
+        <div id="test2"></div>
+
+        <!-- 用jsx创建虚拟DOM -->
+        <div id="test3"></div>
+        <div id="test4"></div>
+
+        <!-- jsx语法 -->
+        <div id="test5"></div>
+        <div id="test6"></div>
+
+        <!-- 类式组件 -->
+        <div id="test7"></div>
+
+        <!-- 组件的state -->
+        <div id="test8"></div>
+        <div id="test9"></div>
+
+        <!-- 组件的props -->
+        <div id="test10"></div>
+        <div id="test11"></div>
+        <div id="test12"></div>
+        <div id="test13"></div>
+        <div id="test14"></div>
+        <div id="test15"></div>
+        <div id="test16"></div>
+        <div id="test17"></div>
+
+        <!-- 字符串型refs -->
+        <div id="test18"></div>
+        <!-- 回调函数型refs -->
+        <div id="test19"></div>
+        <!-- createRef -->
+        <div id="test20"></div>
+
+        <script type="text/babel">
+            // React 18 之前写法
+            // Warning: ReactDOM.render is no longer supported in React 18. Use createRoot instead. Until you switch to the new API,
+            // your app will behave as if it's running React 17.
+            const VDOM1 = <h1>Hello, React17!</h1>;
+            ReactDOM.render(VDOM1, document.getElementById("test1"));
+            function MyComponent() {
+                return <h1>Hello, React17 with Functional component!</h1>;
+            }
+            ReactDOM.render(<MyComponent />, document.getElementById("test1"));
+
+            // React 18 之后写法
+            // 函数式组件一定要首字母大写, 否则报错 <myApp /> is using incorrect casing. Use PascalCase for React components, or lowercase for HTML elements.
+            // function MyApp() {
+            //     // 一定不要加 "", 因为不是字符串, 是虚拟DOM
+            //     return <h1>Hello, React18!</h1>;
+            // }
+            // const container = document.getElementById("test2");
+            // const root = ReactDOM.createRoot(container);
+            // root.render(<MyApp />);
+        </script>
+
+        <script type="text/javascript">
+            // 用js创建虚拟DOM
+            const VDOM3 = React.createElement(
+                "h1",
+                { id: "title" },
+                React.createElement("span", {}, "Hello, VDOM with js!")
+            );
+            ReactDOM.render(VDOM3, document.getElementById("test3"));
+        </script>
+        <script type="text/babel">
+            // 用jsx创建虚拟DOM
+            const VDOM4 = (
+                <h1 id="title">
+                    <span>Hello, VDOM with jsx!</span>
+                </h1>
+            );
+            ReactDOM.render(VDOM4, document.getElementById("test4"));
+        </script>
+
+        <script type="text/babel">
+            const myId = "lYzSk";
+            const myData = "HeLlO, JSx!";
+            // 虚拟DOM只允许一个根标签, 想加多标签的情况用div嵌套
+            // jsx标签必须闭合!
+            // jsx 里面只能写表达式,不能写语句
+            const VDOM5 = (
+                <div>
+                    <h1 className="jsx-snippets-style" id={myId.toLowerCase()}>
+                        <span
+                            style={{
+                                color: "#DC0000",
+                                margin: "10px 0px 0px 10px",
+                                paddingLeft: "20px",
+                                fontSize: "36px",
+                            }}
+                        >
+                            {myData.toLowerCase()}
+                        </span>
+                    </h1>
+                    <h1
+                        className="jsx-snippets-style"
+                        id={myId.toLowerCase() + "2"}
+                    >
+                        <span style={{ color: "#F8EDE3", fontSize: "24px" }}>
+                            {myData.toLowerCase()}
+                        </span>
+                    </h1>
+                    <input type="text" />
+                </div>
+            );
+            ReactDOM.render(VDOM5, document.getElementById("test5"));
+
+            const data = ["Angular", "React", "Vue"];
+            const VDOM6 = (
+                <div>
+                    <h1>前端框架列表</h1>
+                    <ul>
+                        {data.map((item, index) => {
+                            return <li key={index}>{item}</li>;
+                        })}
+                    </ul>
+                </div>
+            );
+            ReactDOM.render(VDOM6, document.getElementById("test6"));
+        </script>
+
+        <script type="text/babel">
+            class MyComponentClass extends React.Component {
+                render() {
+                    // render中的this指向的是MyComponentClass组件实例对象
+                    console.log("render中的this: ", this);
+                    return <h1>类定义的组件, 适用于【复杂组件】的定义</h1>;
+                }
+            }
+            /*
+                React 帮忙把组件类new出来实例对象,
+                并通过实例调用到prototype上的render方法,
+                将render返回的虚拟DOM转为真实DOM然后呈现给页面
+            */
+            console.log(MyComponentClass.prototype);
+            ReactDOM.render(
+                <MyComponentClass />,
+                document.getElementById("test7")
+            );
+        </script>
+
+        <script type="text/babel">
+            // let that;
+
+            class Weather extends React.Component {
+                constructor(props) {
+                    super(props);
+                    this.state = { isHot: true, wind: "大风" };
+                    // that = this;
+                    // changeWeather方法的this:  Weather {props: {…}, context: {…}, refs: {…}, updater: {…}, state: {…}, …}
+                    // 这个方法是从proto里面把changeWeather取出来挂在Weather实例上, 所以回调的时候可以实例调用
+                    this.changeWeather = this.changeWeather.bind(this);
+                    // this.demo = this.changeWeather.bind(this);
+
+                    // 1次调用
+                    console.log("constructor");
+                }
+                render() {
+                    console.log(this);
+
+                    // 1+n次调用, n是state更新的次数
+                    console.log("render");
+                    const { isHot, wind } = this.state;
+                    return (
+                        <h1 id="weather-report" onClick={this.changeWeather}>
+                            今天天气很{isHot ? "Hot" : "Cold"}, 风是 {wind}
+                        </h1>
+                    );
+                }
+                changeWeather() {
+                    // // 这个changeWeather是作为onClick的回调, 所以不是通过实例调用, 而是直接调用
+                    // // 类中所有方法, 都开起了 'use strict', 所以方法的this是undefined
+                    // console.log("changeWeather方法的this: ", this);
+
+                    const isHot = this.state.isHot;
+                    // 控制台是改了boolean值, 但是react components里不会识别state的更改
+                    // this.state.isHot = !isHot;
+                    // console.log(isHot, this.state.isHot);
+                    console.log(this);
+                    this.setState({ isHot: !isHot });
+                }
+            }
+            ReactDOM.render(<Weather />, document.getElementById("test7"));
+
+            // const report = document.getElementById("weather-report");
+            // report.addEventListener("click", () => {
+            //     console.log("被点击了");
+            // });
+            // const report = document.getElementById("weather-report");
+            // report.onclick = () => {
+            //     console.log("被点击了");
+            // };
+            // function changeWeather() {
+            //     // console.log("被点击了");
+
+            //     console.log(that.state.isHot);
+            //     that.state.isHot = !that.state.isHot;
+            // }
+
+            // // changeWeather方法的this:  Weather {props: undefined, context: undefined, refs: {…}, updater: {…}, state: {…}}
+            // const w = new Weather();
+            // w.changeWeather();
+
+            // 简写之前的代码
+            class Weather2 extends React.Component {
+                // 直接往Weather2实例对象添加一个state属性
+                state = { isHot: false, rain: Math.random() };
+
+                constructor(props) {
+                    super(props);
+                    // this.state = { isHot: false, rain: "大雨" };
+                    // this.changeWeather = this.changeWeather.bind(this);
+                }
+                render() {
+                    const { isHot, rain } = this.state;
+                    return (
+                        <h1 onClick={this.changeWeather}>
+                            今天天气很{isHot ? "Hot" : "Cold"}, 下雨率是
+                            {rain}
+                        </h1>
+                    );
+                }
+                // changeWeather() {
+                // changeWeather = function () {
+                // 箭头函数的this是找其外层函数的this
+                // 总结: 自定义方法, 要用赋值语句的形式+箭头函数
+                changeWeather = () => {
+                    this.setState({
+                        isHot: !this.state.isHot,
+                        rain: Math.random(),
+                    });
+                };
+            }
+
+            ReactDOM.render(<Weather2 />, document.getElementById("test9"));
+        </script>
+
+        <script type="text/babel">
+            class Person extends React.Component {
+                // state = { name: "tom", age: 19, gender: "female" };
+                render() {
+                    const { name, age, gender } = this.props;
+                    return (
+                        <ul>
+                            <li>name: {name}</li>
+                            <li>gender: {gender}</li>
+                            <li>age: {age + 1}</li>
+                        </ul>
+                    );
+                }
+            }
+            // ReactDOM.render(<Person />, document.getElementById("test10"));
+            // ReactDOM.render(<Person />, document.getElementById("test11"));
+            // ReactDOM.render(<Person />, document.getElementById("test12"));
+
+            ReactDOM.render(
+                <Person name="name1" age={18} />,
+                document.getElementById("test10")
+            );
+            ReactDOM.render(
+                <Person name="name2" age="19" gender="female" />,
+                document.getElementById("test11")
+            );
+            const person1 = { name: "person1", age: 20, gender: "male" };
+            // ReactDOM.render(
+            //     <Person
+            //         name={person1.name}
+            //         age={person1.age}
+            //         gender={person1.gender}
+            //     />,
+            //     document.getElementById("test12")
+            // );
+            ReactDOM.render(
+                <Person {...person1} />,
+                document.getElementById("test12")
+            );
+
+            class Person2 extends React.Component {
+                render() {
+                    const { name, age, gender } = this.props;
+                    return (
+                        <ul>
+                            <li>name: {name}</li>
+                            <li>gender: {gender}</li>
+                            <li>age: {age + 1}</li>
+                        </ul>
+                    );
+                }
+            }
+
+            // before React 15
+            // Cannot read properties of undefined (reading 'string')
+            // Person2.propTypes = {
+            //     name: React.PropTypes.string,
+            // };
+
+            // after React 15
+            Person2.propTypes = {
+                name: PropTypes.string.isRequired,
+                age: PropTypes.number,
+                speak: PropTypes.func, // 不能是.function
+            };
+            Person2.defaultProps = {
+                gender: "male/female",
+                age: 18,
+            };
+            ReactDOM.render(
+                <Person2 name="alice" age={28} gender="male" />,
+                document.getElementById("test13")
+            );
+            ReactDOM.render(
+                <Person2 name="bob" speak={speak} />,
+                document.getElementById("test14")
+            );
+            const person2 = { name: "cnm", age: 38, gender: "female" };
+            ReactDOM.render(
+                <Person2 {...person2} />,
+                document.getElementById("test15")
+            );
+
+            function speak() {
+                console.log("我说话了");
+            }
+
+            // 简写props
+            // props 是只读的, 不能 this.props.xxx = xxx;
+            class Person3 extends React.Component {
+                constructor(props) {
+                    // console.log(props);
+                    super(props);
+                    console.log("@", this.props);
+                }
+
+                static propTypes = {
+                    name: PropTypes.string.isRequired,
+                    gender: PropTypes.string,
+                    age: PropTypes.number,
+                };
+
+                static defaultProps = {
+                    gender: "男",
+                    age: 18,
+                };
+
+                render() {
+                    const { name, age, gender } = this.props;
+                    return (
+                        <ul>
+                            <li>姓名: {name}</li>
+                            <li>性别: {gender}</li>
+                            <li>年龄: {age}</li>
+                        </ul>
+                    );
+                }
+            }
+            ReactDOM.render(
+                <Person3 name="张三" />,
+                document.getElementById("test16")
+            );
+
+            // 函数式组件props
+            function Person5(props) {
+                const { name, gender, age } = props;
+                console.log(props);
+                return (
+                    <ul>
+                        <li>姓名: {name}</li>
+                        <li>性别: {gender}</li>
+                        <li>年龄: {age}</li>
+                    </ul>
+                );
+            }
+            // 函数式组件用Props只能写在函数外侧
+            Person5.propTypes = {
+                name: PropTypes.string.isRequired,
+                age: PropTypes.number,
+            };
+            Person5.defaultProps = {
+                gender: "女",
+            };
+            ReactDOM.render(
+                <Person5 name="李四" age={20} />,
+                document.getElementById("test17")
+            );
+        </script>
+
+        <script type="text/babel">
+            class Demo extends React.Component {
+                render() {
+                    return (
+                        <div>
+                            <input
+                                ref="input1"
+                                type="text"
+                                placeholder="点击按钮提示数据"
+                            />
+                            &nbsp;&nbsp;
+                            <button ref="button1" onClick={this.showData}>
+                                点我提示左侧数据
+                            </button>
+                            &nbsp;&nbsp;
+                            <input
+                                ref="input2"
+                                onBlur={this.showData2}
+                                type="text"
+                                placeholder="失去焦点提示数据"
+                            />
+                        </div>
+                    );
+                }
+
+                // 展示左侧输入框数据
+                showData = () => {
+                    // console.log("@");
+                    // const input = document.getElementById("input1");
+                    // alert(input.value);
+                    console.log(this);
+                    const { input1 } = this.refs;
+                    alert(input1.value);
+                };
+
+                // 展示右侧输入框数据
+                showData2 = () => {
+                    const { input2 } = this.refs;
+                    alert(input2.value);
+                };
+            }
+            ReactDOM.render(
+                <Demo a="1" b="2" />,
+                document.getElementById("test18")
+            );
+        </script>
+
+        <script type="text/babel">
+            class Demo2 extends React.Component {
+                state = { isHot: true };
+
+                render() {
+                    const { isHot } = this.state;
+                    return (
+                        <div>
+                            <h2 onClick={this.changeWeather}>
+                                今天天气很{isHot ? "炎热" : "凉爽"}
+                            </h2>
+                            {/*<input
+                                ref={(currentNode) => {
+                                    this.input1 = currentNode;
+                                    console.log("@", currentNode);
+                                }}
+                                type="text"
+                                placeholder="点击按钮提示数据"
+                            />*/}
+                            <input
+                                ref={this.saveInput}
+                                type="text"
+                                placeholder="点击按钮提示数据"
+                            />
+                            &nbsp;&nbsp;
+                            <button ref="button1" onClick={this.showData}>
+                                点我提示左侧数据
+                            </button>
+                            <input
+                                onBlur={this.showData2}
+                                ref={(c) => {
+                                    this.input2 = c;
+                                }}
+                                type="text"
+                                placeholder="失去焦点提示数据"
+                            />
+                        </div>
+                    );
+                }
+                showData = () => {
+                    const { input1 } = this;
+                    alert(input1.value);
+                };
+                showData2 = () => {
+                    const { input2 } = this;
+                    alert(input2.value);
+                };
+                changeWeather = () => {
+                    this.setState({ isHot: !this.state.isHot });
+                };
+                saveInput = (c) => {
+                    this.input1 = c;
+                    console.log("@c");
+                };
+            }
+            ReactDOM.render(<Demo2 />, document.getElementById("test19"));
+        </script>
+
+        <script type="text/babel">
+            class Demo3 extends React.Component {
+                myRef = React.createRef();
+                myRef2 = React.createRef();
+
+                render() {
+                    return (
+                        <div>
+                            <input
+                                ref={this.myRef}
+                                type="text"
+                                placeholder="点击按钮提示数据"
+                            />
+                            &nbsp;&nbsp;
+                            <button ref="button1" onClick={this.showData}>
+                                点我提示左侧数据
+                            </button>
+                            {/*这个input框的ref可以省略, 因为可以通过event和target得到发生事件的DOM对象*/}
+                            <input
+                                onBlur={this.showData2}
+                                type="text"
+                                placeholder="失去焦点提示数据"
+                            />
+                        </div>
+                    );
+                }
+
+                showData = () => {
+                    alert(this.myRef.current.value);
+                };
+                showData2 = (event) => {
+                    alert(event.target.value);
+                };
+            }
+            ReactDOM.render(<Demo3 />, document.getElementById("test20"));
+        </script>
+    </body>
+</html>
