@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- <script src="https://unpkg.com/react@18.0.0/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.development.js"></script> -->
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="test1"></div>
+
+        <script type="text/babel">
+            class Count extends React.Component {
+                constructor(props) {
+                    console.log("Count-Constructor");
+                    super(props);
+                    this.state = { num: 0 };
+                }
+
+                // UNSAFE_componentWillMount() {
+                //     console.log("Count-componentWillMount");
+                // }
+
+                static getDerivedStateFromProps(props, state) {
+                    console.log("Count-getDerivedStateFromProps", props, state);
+                    return null;
+                    // return { num: 100 };
+                    // return props;
+                }
+
+                componentDidMount() {
+                    console.log("Count-componentDidMount");
+                }
+
+                componentWillUnmount() {
+                    console.log("Count-componentWillUnmount");
+                }
+
+                shouldComponentUpdate() {
+                    console.log("Count-shouldComponentUpdate");
+                    return true;
+                    // return false;
+                }
+
+                // UNSAFE_componentWillUpdate() {
+                //     console.log("Count-componentWillUpdate");
+                // }
+
+                getSnapshotBeforeUpdate(prevProps, prevState) {
+                    console.log(
+                        "Count-getSnapshotBeforeUpdate",
+                        prevProps,
+                        prevState
+                    );
+                    // return null;
+                    return "hehe";
+                }
+
+                componentDidUpdate(prevProps, prevState, snapshotValue) {
+                    console.log(
+                        "Count-componentDidUpdate",
+                        prevProps,
+                        prevState,
+                        snapshotValue
+                    );
+                }
+
+                add = () => {
+                    const { num } = this.state;
+                    this.setState({ num: num + 1 });
+                };
+
+                death = () => {
+                    ReactDOM.unmountComponentAtNode(
+                        document.getElementById("test1")
+                    );
+                };
+
+                force = () => {
+                    this.forceUpdate();
+                };
+
+                render() {
+                    console.log("Count-render");
+                    const { num } = this.state;
+                    return (
+                        <div>
+                            <h2>当前求和为: {num}</h2>
+                            <button onClick={this.add}>点我+1</button>
+                            <button onClick={this.death}>卸载组件</button>
+                            <button onClick={this.force}>
+                                不更改任何状态中的数据强制更新
+                            </button>
+                        </div>
+                    );
+                }
+            }
+
+            ReactDOM.render(
+                <Count num={200} />,
+                document.getElementById("test1")
+            );
+        </script>
+    </body>
+</html>

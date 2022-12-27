@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="test"></div>
+
+        <script type="text/babel">
+            /*
+                index作为key时,更新时: 
+                    <li key=0>王五---20}</li>
+                    <li key=1>张三---18}</li>
+                    <li key=2>李四---19}</li>
+                相当于, 把整个persons数组都改变了, TrueDOM本来只要更新一次, 却导致了三次更新
+
+                id作为key时,更新时: 
+                    <li key=3>王五---20}</li>
+                    <li key=1>张三---18}</li>
+                    <li key=2>李四---19}</li>
+                只需要把key=3的 VirtualDOM 转成TrueDOM, 仅仅只更新一次
+
+                如果在traversal的里面除了string, 还加一个 <input> 标签, 用index作为key就会出现问题, 
+                因为diff算法导致了内容错位
+            */
+            class Person extends React.Component {
+                state = {
+                    persons: [
+                        { id: 1, name: "张三", age: 18 },
+                        { id: 2, name: "李四", age: 19 },
+                    ],
+                };
+
+                add = () => {
+                    const { persons } = this.state;
+                    const p = { id: persons.length + 1, name: "王五", age: 20 };
+                    this.setState({ persons: [p, ...persons] });
+                };
+
+                render() {
+                    return (
+                        <div>
+                            <h3>用index索引值作为key</h3>
+                            <h2>展示人员信息</h2>
+                            <button onClick={this.add}>添加一个王五</button>
+                            <ul>
+                                {this.state.persons.map((personObj, index) => {
+                                    return (
+                                        <li key={index}>
+                                            {personObj.name}---{personObj.age}
+                                            <input type="text" />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+
+                            <hr />
+                            <hr />
+
+                            <h3>用id作为key</h3>
+                            <h2>展示人员信息</h2>
+                            <button onClick={this.add}>添加一个王五</button>
+                            <ul>
+                                {this.state.persons.map((personObj) => {
+                                    return (
+                                        <li key={personObj.id}>
+                                            {personObj.name}---{personObj.age}
+                                            <input type="text" />
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<Person />, document.getElementById("test"));
+        </script>
+    </body>
+</html>

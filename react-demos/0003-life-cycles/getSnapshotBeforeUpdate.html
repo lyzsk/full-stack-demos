@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .list {
+                width: 200px;
+                height: 150px;
+                background-color: #579bb1;
+                overflow: auto;
+            }
+            .news {
+                /* 7 * 30 = 210px, > 150px */
+                height: 30px;
+            }
+        </style>
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <!-- Don't use this in production: -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="test"></div>
+
+        <script type="text/babel">
+            class NewsList extends React.Component {
+                state = { newsArr: [] };
+
+                componentDidMount() {
+                    setInterval(() => {
+                        const { newsArr } = this.state;
+                        const news = "新闻" + (newsArr.length + 1);
+                        this.setState({ newsArr: [news, ...newsArr] });
+                    }, 500);
+                }
+
+                getSnapshotBeforeUpdate() {
+                    // return this.refs.list.scrollHeight;
+                    return this.newsList.scrollHeight;
+                }
+
+                componentDidUpdate(prevProps, prevState, height) {
+                    // this.refs.list.scrollTop +=
+                    //     this.refs.list.scrollHeight - height;
+                    this.newsList.scrollTop +=
+                        this.newsList.scrollHeight - height;
+                }
+
+                render() {
+                    // 注意 jsx 里面 class 要改成 className
+                    return (
+                        <div
+                            className="list"
+                            ref={(c) => {
+                                this.newsList = c;
+                            }}
+                        >
+                            {this.state.newsArr.map((n, index) => {
+                                return (
+                                    <div key={index} className="news">
+                                        {n}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    );
+                }
+            }
+            ReactDOM.render(<NewsList />, document.getElementById("test"));
+        </script>
+    </body>
+</html>
