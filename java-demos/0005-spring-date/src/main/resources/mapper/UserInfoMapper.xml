@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sichu.demo.mapper.UserInfoMapper">
+    <insert id="insert">
+        insert into user_info values(#{id}, #{username}, #{createTime}, #{updateTime})
+    </insert>
+    <insert id="batchInsert">
+        insert into user_info values
+        <foreach collection="list" item="userInfo" index="index" separator=",">
+            (
+            #{userInfo.id},
+            #{userInfo.username},
+            #{userInfo.createTime},
+            #{userInfo.updateTime}
+            )
+        </foreach>
+    </insert>
+    <select id="getList" resultType="cn.sichu.demo.entity.UserInfo">
+        select * from user_info
+    </select>
+    <select id="getListWithJsonFormat" resultType="cn.sichu.demo.entity.UserInfo">
+        select * from user_info
+    </select>
+    <select id="getListWithSDF" resultType="cn.sichu.demo.entity.UserInfo">
+        select * from user_info
+    </select>
+    <select id="getListWithDTF" resultType="cn.sichu.demo.entity.UserInfo">
+        select * from user_info
+    </select>
+    <select id="getListWithJackson" resultType="cn.sichu.demo.entity.UserInfo">
+        select * from user_info
+    </select>
+</mapper>
