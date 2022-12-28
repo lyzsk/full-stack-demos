@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "6772caa0-9302-43e2-b1f2-fb402dacc6b5",
+		"name": "java-demo-0005",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20958494"
+	},
+	"item": [
+		{
+			"name": "insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/userinfo/insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch-insert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"username\": \"张三\"},\r\n    {\"username\": \"李四\"},\r\n    {\"username\": \"王五\"},\r\n    {\"username\": \"赵六\"},\r\n    {\"username\": \"田七\"},\r\n    {\"username\": \"周八\"},\r\n    {\"username\": \"吴九\"},\r\n    {\"username\": \"郑十\"}\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/userinfo/batch-insert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"batch-insert"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/userinfo/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-with-json-format",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/userinfo/list-with-json-format",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"list-with-json-format"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-with-sdf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/userinfo/list-with-sdf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"list-with-sdf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-with-dtf",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/userinfo/list-with-dtf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"list-with-dtf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list-with-jackson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/userinfo/list-with-jackson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"userinfo",
+						"list-with-jackson"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

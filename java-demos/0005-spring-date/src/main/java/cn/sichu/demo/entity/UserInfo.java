@@ -1,6 +1,5 @@
 package cn.sichu.demo.entity;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.util.Date;
@@ -24,15 +23,15 @@ public class UserInfo {
     /**
      * 创建时间
      */
-    // private Date createTime;
+    private Date createTime;
 
     // private LocalDateTime createTime;
 
     /**
      * 使用 JsonFormat 局部格式化
      */
-    @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "UTC")
-    private Date createTime;
+    // @JsonFormat(pattern = "yyyy-MM-dd hh:mm:ss", timezone = "UTC")
+    // private Date createTime;
 
     /**
      * 使用 SimpleDateFormat 格式化
@@ -55,6 +54,7 @@ public class UserInfo {
      * 更新时间
      */
     private Date updateTime;
+
     // private LocalDateTime updateTime;
 
     /**

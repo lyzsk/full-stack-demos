@@ -18,6 +18,6 @@
 
 # LICENSE
 
-[MIT] Copyright (c) 2022 lyzsk
+[MIT LICENSE] Copyright (c) 2022 lyzsk
 
-[mit]: https://github.com/lyzsk/full-stack-demos/blob/master/LICENSE
+[mit license]: https://github.com/lyzsk/full-stack-demos/blob/master/LICENSE

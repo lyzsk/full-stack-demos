@@ -7,9 +7,9 @@ spring:
     url: jdbc:mysql://localhost:3306/java_demo_0005?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: root
-#  jackson:
-#    date-format: yyyy-MM-dd HH:mm:ss
-#    time-zone: UTC
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
 
 mybatis:
   mapper-locations:
