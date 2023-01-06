@@ -20,6 +20,7 @@
 | :---------------: | :------------------------: | :---------------------------: | :-----------: |
 | html-css-js-demos | [html-css-js-demos-readme] | [html-css-js-demos-readme-cn] | [back to top] |
 |    java-demos     |    [java-demos-readme]     |    [java-demos-readme-cn]     | [back to top] |
+|    react-demos    |    [react-demos-readme]    |    [react-demos-readme-cn]    | [back to top] |
 
 # LICENSE
 
@@ -31,3 +32,5 @@
 [html-css-js-demos-readme-cn]: ./html-css-js-demos/README.CN.md
 [java-demos-readme]: ./java-demos/README.md
 [java-demos-readme-cn]: ./java-demos/README.CN.md
+[react-demos-readme]: ./react-demos/README.md
+[react-demos-readme-cn]: ./react-demos/README.CN.md
