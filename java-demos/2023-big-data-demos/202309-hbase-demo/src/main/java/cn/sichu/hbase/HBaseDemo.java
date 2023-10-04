@@ -178,6 +178,74 @@ public class HBaseDemo {
         table.close();
     }
 
+    /**
+     * DML scan data
+     *
+     * @param nameSpaceName
+     * @param tableName
+     * @param startRow      included
+     * @param stopRow       excluded
+     */
+    public static void scanData(String nameSpaceName, String tableName, String startRow, String stopRow)
+        throws IOException {
+        Table table = connection.getTable(TableName.valueOf(nameSpaceName, tableName));
+        Scan scan = new Scan();
+        scan.withStartRow(Bytes.toBytes(startRow)).withStopRow(Bytes.toBytes(stopRow));
+        ResultScanner scanner = table.getScanner(scan);
+        for (Result result : scanner) {
+            Cell[] cells = result.rawCells();
+            for (Cell cell : cells) {
+                String cellStr =
+                    Bytes.toString(CellUtil.cloneRow(cell)) + " : " + Bytes.toString(CellUtil.cloneFamily(cell)) + " : "
+                        + Bytes.toString(CellUtil.cloneQualifier(cell)) + " : " + Bytes.toString(
+                        CellUtil.cloneValue(cell));
+                System.out.println(cellStr);
+            }
+            System.out.println("===========================================");
+        }
+        table.close();
+    }
+
+    /**
+     * create table 带预分区
+     *
+     * @param nameSpaceName
+     * @param tableName
+     * @param cfs
+     * @throws IOException
+     */
+    public static void createTableWithRegions(String nameSpaceName, String tableName, String... cfs)
+        throws IOException {
+        if (checkTableExist(nameSpaceName, tableName)) {
+            System.err.println(
+                (nameSpaceName == null || "".equals(nameSpaceName) ? "default" : nameSpaceName) + " : " + tableName
+                    + " already existed");
+            return;
+        }
+        Admin admin = connection.getAdmin();
+        TableDescriptorBuilder tableDescriptorBuilder =
+            TableDescriptorBuilder.newBuilder(TableName.valueOf(nameSpaceName, tableName));
+        if (cfs == null || cfs.length < 1) {
+            System.err.println("should have at least 1 column family");
+            return;
+        }
+        for (String cf : cfs) {
+            ColumnFamilyDescriptorBuilder columnFamilyDescriptorBuilder =
+                ColumnFamilyDescriptorBuilder.newBuilder(Bytes.toBytes(cf));
+            ColumnFamilyDescriptor columnFamilyDescriptor = columnFamilyDescriptorBuilder.build();
+            tableDescriptorBuilder.setColumnFamily(columnFamilyDescriptor);
+        }
+        TableDescriptor tableDescriptor = tableDescriptorBuilder.build();
+        byte[][] splitkeys = new byte[4][];
+        // ['1000','2000','3000','4000']
+        splitkeys[0] = Bytes.toBytes("1000");
+        splitkeys[1] = Bytes.toBytes("2000");
+        splitkeys[2] = Bytes.toBytes("3000");
+        splitkeys[3] = Bytes.toBytes("4000");
+        admin.createTable(tableDescriptor, splitkeys);
+        admin.close();
+    }
+
     public static void main(String[] args) throws IOException {
         // createNameSpace("mydb2");
         // createTable("", "t1", "info1", "info2");
@@ -188,6 +256,8 @@ public class HBaseDemo {
         // deleteData("", "stu", "1003", "info", "sex");
         // getData("", "stu", "1003$", "", "");
         // getData("", "stu", "1001", "info", "");
-        getData("", "stu", "1001", "msg", "salary");
+        // getData("", "stu", "1001", "msg", "salary");
+        // scanData("", "stu", "1001", "10030");
+        createTableWithRegions("", "staff4", "info");
     }
 }
