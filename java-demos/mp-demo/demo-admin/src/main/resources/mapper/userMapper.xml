@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sichu.mapper.UserMapper">
+    <resultMap id="resultMap" type="cn.sichu.entity.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="gender" column="gender"/>
+        <result property="age" column="age"/>
+        <result property="address" column="address"/>
+        <result property="telNumber" column="tel_number"/>
+        <result property="keySkills" column="key_skills"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="remark" column="remark"/>
+        <result property="deleted" column="deleted"/>
+    </resultMap>
+
+    <select id="selectUserByKeySkills" resultType="cn.sichu.entity.User">
+        select id, name
+        from t_user
+        where key_skills like #{firstSkill} or key_skills like #{secondSkill}
+        order by age desc
+    </select>
+
+</mapper>

@@ -1,0 +1,22 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/mp_demo?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  global-config:
+    db-config:
+      table-prefix: t_
+      id-type: auto
+      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
