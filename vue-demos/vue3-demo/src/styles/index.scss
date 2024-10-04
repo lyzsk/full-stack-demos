@@ -1,3 +1,15 @@
 @import "./reset.scss";
 
-$color: red;
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: $base-menu-color;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: #40464a;
+    border-radius: 10px;
+}

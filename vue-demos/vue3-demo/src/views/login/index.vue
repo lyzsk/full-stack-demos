@@ -6,7 +6,7 @@
             </el-col>
             <el-col :span="12" :xs="24">
                 <el-form
-                    class="loginForm"
+                    class="login_form"
                     :model="loginForm"
                     :rules="rules"
                     ref="loginFormRef"
@@ -47,12 +47,13 @@
 import { User, Lock } from "@element-plus/icons-vue";
 import { ref, reactive } from "vue";
 import useUserStore from "@/store/modules/user";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { ElNotification, messageConfig } from "element-plus";
 import { getTime } from "@/utils/time";
 
 let useStore = useUserStore();
 let $router = useRouter();
+let $route = useRoute();
 let loading = ref(false);
 let loginForm = reactive({ username: "admin", password: "123456" });
 let loginFormRef = ref();
@@ -61,7 +62,8 @@ const login = async () => {
     loading.value = true;
     try {
         await useStore.userLogin(loginForm);
-        $router.push("/");
+        let redirect: any = $route.query.redirect;
+        $router.push({ path: redirect || "/" });
         ElNotification({
             type: "success",
             message: "欢迎回来",
@@ -130,7 +132,7 @@ const rules = {
     background: url("@/assets/images/background.jpg") no-repeat;
     background-size: cover;
 }
-.loginForm {
+.login_form {
     width: 80%;
     top: 30vh;
     position: relative;

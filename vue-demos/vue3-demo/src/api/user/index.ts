@@ -8,5 +8,5 @@ enum API {
 
 export const reqLogin = (data: loginForm) =>
     request.post<any, loginResponseData>(API.LOGIN_URL, data);
-export const getUserInfo = () =>
+export const reqUserInfo = () =>
     request.get<any, userResponseData>(API.USERINFO_URL);
